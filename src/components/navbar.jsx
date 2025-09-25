@@ -2,15 +2,16 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import NavLink from './navLink';
-
-const MENU_LIST = [
-    { url: '/', title: 'Home' },
-    { url: '/about', title: 'About' },
-    { url: '/portfolio', title: 'Portfolio' },
-    { url: '/contact', title: 'Contact' },
-];
+import { motion } from 'framer-motion';
+import {
+    MENU_LIST,
+    SOCIAL_LIST,
+    topVariant,
+    centerVariant,
+    bottomVariant,
+    listVariant,
+} from '../utils/links';
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -52,22 +53,11 @@ export default function Navbar() {
                 className='w-1/3 hidden md:flex items-center 
             justify-center gap-4 text-zinc-600'
             >
-                <Link href='#'>
-                    <FaGithub size={24} className='hover:text-black' />
-                </Link>{' '}
-                <Link href='#'>
-                    <FaFacebook size={24} className='hover:text-blue-500' />
-                </Link>
-                <Link href='#'>
-                    <FaInstagram
-                        size={24}
-                        className='hover:bg-gradient-to-tr hover:from-yellow-400 rounded-md 
-                        hover:via-pink-500 hover:to-purple-600 hover:text-white'
-                    />
-                </Link>
-                <Link href='#'>
-                    <FaLinkedin size={24} className='hover:text-blue-800' />
-                </Link>
+                {SOCIAL_LIST.map(({ url, icon }, idx) => (
+                    <a href={url} target='_blank' rel='noopener noreferrer' key={idx}>
+                        {icon}
+                    </a>
+                ))}
             </div>
 
             {/* menu */}
@@ -75,27 +65,42 @@ export default function Navbar() {
                 {/* menu button */}
                 <button
                     onClick={() => setMenuOpen((prev) => !prev)}
-                    className=' w-10 h-7 cursor-pointer relative z-50
+                    className='w-10 h-8 cursor-pointer relative z-50
                 flex flex-col items-center justify-between'
                 >
-                    <div className='w-10 h-1 bg-black rounded-sm' />
-                    <div className='w-10 h-1 bg-black rounded-sm' />
-                    <div className='w-10 h-1 bg-black rounded-sm' />
+                    <motion.div
+                        variants={topVariant}
+                        animate={menuOpen ? 'open' : 'close'}
+                        className='w-10 h-1 bg-black rounded-sm origin-left'
+                    />
+                    <motion.div
+                        variants={centerVariant}
+                        animate={menuOpen ? 'open' : 'close'}
+                        className='w-10 h-1 bg-black rounded-sm'
+                    />
+                    <motion.div
+                        variants={bottomVariant}
+                        animate={menuOpen ? 'open' : 'close'}
+                        className='w-10 h-1 bg-black rounded-sm origin-left'
+                    />
                 </button>
 
                 {/* menu list */}
                 {menuOpen && (
-                    <div
-                        className='absolute top-0 left-0
+                    <motion.div
+                        variants={listVariant}
+                        initial='close'
+                        animate='open'
+                        className='absolute top-0 left-0 z-40
                 h-screen w-screen bg-black text-white text-4xl
                 flex flex-col items-center justify-center gap-8'
                     >
                         {MENU_LIST.map(({ url, title }, idx) => (
-                            <Link href={url} key={idx} className=''>
-                                {title}
-                            </Link>
+                            <motion.div key={idx} variants={listItemVariant}>
+                                <Link href={url}>{title}</Link>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </nav>

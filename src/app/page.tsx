@@ -1,7 +1,11 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FaRegMessage } from 'react-icons/fa6';
+import { FaLaptop } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Home() {
     return (
@@ -11,24 +15,38 @@ export default function Home() {
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
         >
-            <div className='h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-24 xl:px-48'>
+            <div
+                className='h-full flex flex-col lg:flex-row px-4 sm:px-8 
+            md:px-12 lg:px-24 xl:px-48 font-gelasio'
+            >
                 {/* image */}
                 <div className='h-1/2 lg:h-full lg:w-1/2 relative'>
                     <Image
-                        src='/my-picture.png'
-                        alt='Image_Home_Page'
+                        src='/my-picture_light.png'
+                        alt='Image_Home_Page_Light'
                         fill
-                        className='object-contain'
+                        className='object-contain dark:hidden'
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    />
+                    <Image
+                        src='/my-picture_dark.png'
+                        alt='Image_Home_Page_Dark'
+                        fill
+                        className='object-contain hidden dark:block'
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                     />
                 </div>
 
                 {/* text */}
                 <div
-                    className='h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-5 sm:gap-6 md:gap-7 lg:gap-8 
-                items-center justify-center'
+                    className='h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-5 
+                sm:gap-6 md:gap-7 lg:gap-8 items-center justify-center'
                 >
                     {/* title */}
-                    <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold'>
+                    <h1
+                        className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+                    font-bold text-center lg:text-left'
+                    >
                         Crafting Clean & Impactful Web Experiences
                     </h1>
 
@@ -47,19 +65,27 @@ export default function Home() {
                     </p>
 
                     {/* buttons */}
-                    <div className='flex items-center justify-start gap-4'>
-                        <button
-                            className='bg-black text-white p-4 rounded-lg cursor-pointer 
-                        hover:bg-transparent hover:text-black hover:border'
-                        >
-                            View My Work
-                        </button>
-                        <button
-                            className='bg-transparent text-black p-4 rounded-lg border cursor-pointer
-                        hover:bg-black hover:text-white hover:border-black'
-                        >
-                            Contact Me
-                        </button>
+                    <div className='flex gap-4 w-full justify-end'>
+                        <Link href='/contact'>
+                            <Button
+                                className='cursor-pointer md:py-5 border border-black dark:border-white
+                            bg-white text-black hover:bg-black hover:text-white font-semibold
+                            dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black'
+                            >
+                                <FaLaptop className='mr-1' />
+                                View My Work
+                            </Button>
+                        </Link>
+                        <Link href='/portfolio'>
+                            <Button
+                                className='cursor-pointer md:py-5 border border-black dark:border-white
+                            bg-white text-black hover:bg-black hover:text-white font-semibold
+                            dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black'
+                            >
+                                <FaRegMessage className='mr-1' />
+                                Contact Me
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ export default function AboutPage() {
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
         >
-            <div>
+            <div className='font-gelasio'>
                 <h1>About Me</h1>
             </div>
         </motion.div>

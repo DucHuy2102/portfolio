@@ -9,7 +9,7 @@ export default function ContactPage() {
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
         >
-            <div>
+            <div className='font-gelasio'>
                 <h1>Contact Me</h1>
             </div>
         </motion.div>

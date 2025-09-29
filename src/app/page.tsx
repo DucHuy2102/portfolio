@@ -66,7 +66,7 @@ export default function Home() {
 
                     {/* buttons */}
                     <div className='flex gap-4 w-full justify-end'>
-                        <Link href='/contact'>
+                        <Link href='/portfolio'>
                             <Button
                                 className='cursor-pointer md:py-5 border border-black dark:border-white
                             bg-white text-black hover:bg-black hover:text-white font-semibold
@@ -76,7 +76,7 @@ export default function Home() {
                                 View My Work
                             </Button>
                         </Link>
-                        <Link href='/portfolio'>
+                        <Link href='/contact'>
                             <Button
                                 className='cursor-pointer md:py-5 border border-black dark:border-white
                             bg-white text-black hover:bg-black hover:text-white font-semibold

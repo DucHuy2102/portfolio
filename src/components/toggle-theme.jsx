@@ -16,34 +16,31 @@ export default function ToggleThemeButton() {
     return (
         <Button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className='cursor-pointer flex justify-center items-center gap-2'
+            className='cursor-pointer flex justify-center items-center gap-2 group'
             variant='ghost'
             size='icon'
         >
             <AnimatePresence mode='wait' initial={false}>
-                {theme === 'dark' ? (
-                    <motion.span
-                        key='sun-icon'
-                        variants={iconVariants}
-                        initial='hidden'
-                        animate='visible'
-                        exit='exit'
-                        className='inline-flex items-center'
-                    >
-                        <FaSun className='text-yellow-500 text-lg' />
-                    </motion.span>
-                ) : (
-                    <motion.span
-                        key='moon-icon'
-                        variants={iconVariants}
-                        initial='hidden'
-                        animate='visible'
-                        exit='exit'
-                        className='inline-flex items-center'
-                    >
-                        <FaMoon className='text-gray-500 text-lg' />
-                    </motion.span>
-                )}
+                <motion.span
+                    key='sun-icon'
+                    variants={iconVariants}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                    className='block dark:hidden'
+                >
+                    <FaSun className='text-yellow-500 group-hover:text-yellow-400' />
+                </motion.span>
+                <motion.span
+                    key='moon-icon'
+                    variants={iconVariants}
+                    initial='hidden'
+                    animate='visible'
+                    exit='exit'
+                    className='hidden dark:block'
+                >
+                    <FaMoon className='text-gray-500 group-hover:text-gray-100' />
+                </motion.span>
             </AnimatePresence>
         </Button>
     );

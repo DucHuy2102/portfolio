@@ -1,5 +1,7 @@
 'use client';
+
 import { motion } from 'framer-motion';
+import { TopProfile, Projects, HireButton } from '../../components/portfolio/index';
 
 export default function PortfolioPage() {
     return (
@@ -9,9 +11,12 @@ export default function PortfolioPage() {
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
         >
-            <div className='font-gelasio'>
-                <h1>My Portfolio</h1>
+            <div className='relative'>
+                <TopProfile />
+                <Projects />
             </div>
+
+            <HireButton />
         </motion.div>
     );
 }

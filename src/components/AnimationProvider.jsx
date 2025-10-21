@@ -13,9 +13,9 @@ export default function AnimationProvider({ children }) {
 
     return (
         <AnimatePresence mode='wait'>
-            <div key={pathName} className='w-screen h-screen'>
+            <div key={pathName} className='w-full h-full'>
                 <motion.div
-                    className='h-screen w-screen fixed bg-black rounded-b-[100px] z-[100]'
+                    className='h-full w-full fixed bg-black rounded-b-[100px] z-[100]'
                     animate={{ height: '0vh' }}
                     exit={{ height: '150vh' }}
                     transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -26,7 +26,7 @@ export default function AnimationProvider({ children }) {
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 0 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1.5, ease: 'easeOut' }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
                 >
                     {namePage}
                 </motion.div>

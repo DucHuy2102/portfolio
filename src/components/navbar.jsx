@@ -6,7 +6,6 @@ import NavLink from './navLink';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import ToggleThemeButton from './toggle-theme';
-import { useTheme } from 'next-themes';
 
 const MENU_LIST = [
     { url: '/', title: 'Home' },
@@ -48,34 +47,46 @@ const listItemVariant = {
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const { theme } = useTheme();
     const SOCIAL_LIST = [
         {
             url: 'https://github.com/DucHuy2102',
             icon: (
                 <FaGithub
                     size={24}
-                    className={`${theme === 'dark' ? 'hover:text-white' : 'hover:text-black'}`}
+                    className='text-zinc-500 hover:text-black 
+                dark:text-zinc-400 dark:hover:text-white'
                 />
             ),
         },
         {
             url: 'https://www.facebook.com/Duc.Huy2102',
-            icon: <FaFacebook size={24} className='hover:text-blue-500' />,
+            icon: (
+                <FaFacebook
+                    size={24}
+                    className='text-zinc-500 hover:text-blue-500
+            dark:text-zinc-400 dark:hover:text-blue-500'
+                />
+            ),
         },
         {
             url: 'https://www.instagram.com/d_huy02/',
             icon: (
                 <FaInstagram
                     size={24}
-                    className='hover:bg-gradient-to-tr hover:from-yellow-400 rounded-md 
-                hover:via-pink-500 hover:to-purple-600 hover:text-white'
+                    className='text-zinc-500 hover:bg-gradient-to-tr hover:from-yellow-400 rounded-md 
+                hover:via-pink-500 hover:to-purple-600 hover:text-white dark:text-zinc-400 dark:hover:text-white'
                 />
             ),
         },
         {
             url: 'https://www.linkedin.com/in/duchuy2102/',
-            icon: <FaLinkedin size={24} className='hover:text-blue-800' />,
+            icon: (
+                <FaLinkedin
+                    size={24}
+                    className='text-zinc-500 hover:text-blue-800 
+                    dark:text-zinc-400 dark:hover:text-blue-600'
+                />
+            ),
         },
     ];
 

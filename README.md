@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 NGUYEN DUC HUY | PROFESSIONAL PORTFOLIO
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+Welcome to my personal Portfolio repository. This project serves as my digital business card, showcasing my skills in modern web development and providing live demonstrations of my key projects. Built with a focus on clean, scalable, and high-performance interfaces, this site itself demonstrates my ability to build production-ready applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Live Demo & Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This application is deployed and hosted on Vercel, the creators of Next.js, ensuring optimal performance and speed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### [✨ VIEW LIVE DEMO HERE](https://portfolio-two-sandy-yed9ozljzi.vercel.app/)
 
-## Learn More
+## 🛠️ Tech Stack & Architecture
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio is a showcase of my proficiency in the MERN-adjacent stack, utilizing the following core technologies:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Framework** | **Next.js** | High-performance React framework for Server-Side Rendering (SSR) and Static Site Generation (SSG). |
+| **Language** | **TypeScript** | Ensures type safety, improves code maintainability, and scalability. |
+| **Styling** | **Tailwind CSS** | Utility-first CSS framework for rapid and responsive UI development. |
+| **Deployment** | **Vercel** | Seamless deployment and globally optimized hosting with built-in CDN. |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌟 Key Features & Highlights
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Optimized Performance:** Achieves high scores on Lighthouse and core Web Vitals, leveraging Next.js optimizations.
+* **Fully Responsive Design:** Ensures a seamless experience across all devices (Desktop, Tablet, Mobile).
+* **Clean Component Architecture:** Structured code based on reusable React components for easy maintenance and extension.
+* **Dynamic Project Showcase:** A dedicated section to filter and view detailed information on individual projects.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Getting Started (Local Development)
+
+Follow these steps to set up the project on your local machine for development and testing:
+
+### Prerequisites
+
+* Node.js (LTS version recommended)
+* npm, yarn, or pnpm
+
+### Installation Steps
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/DucHuy2102/portfolio.git
+    cd [your-repo-name]
+    ```
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    # or yarn install
+    # or pnpm install
+    ```
+3.  **Start the Development Server:**
+    ```bash
+    npm run dev
+    # or yarn dev
+    # or pnpm dev
+    ```
+
+The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🤝 Connect with Me
+
+I am actively seeking opportunities as a Frontend Developer and welcome collaboration.
+
+* **LinkedIn:** https://www.linkedin.com/in/duchuy2102/
+* **Email:** [duchuytv2102@gmail.com](mailto:duchuytv2102@gmail.com)
+* **GitHub:** https://github.com/DucHuy2102

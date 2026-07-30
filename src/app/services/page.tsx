@@ -30,7 +30,7 @@ export default function ServicesPage() {
                         My Services
                     </h1>
                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-sans">
-                        High quality services for personal and business needs. Explore my offerings below and let's build something amazing together.
+                        High quality services for personal and business needs. Explore my offerings below and let&apos;s build something amazing together.
                     </p>
                 </div>
 

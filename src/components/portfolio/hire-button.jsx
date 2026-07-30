@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+import CVActions from './cv-actions';
+
 export default function HireButton() {
     const [hovered, setHovered] = useState(false);
 
@@ -22,12 +24,13 @@ export default function HireButton() {
                     className='block h-[1px] sm:h-[2px] w-3/4 sm:w-1/2 mx-auto bg-gradient-to-r 
                     from-white via-black to-white'
                 />
-                <p className='text-lg sm:text-2xl max-w-[22rem] sm:max-w-3xl text-zinc-400 dark:text-zinc-500 text-center'>
+                <p className='text-lg sm:text-2xl max-w-[22rem] sm:max-w-3xl text-zinc-400 dark:text-zinc-500 text-center mb-2'>
                     I build elegant, high-performance web applications — transforming ideas into
                     digital reality.
                 </p>
+                <CVActions />
             </div>
-            <div className='relative w-full flex justify-center items-center'>
+            <div className='relative w-full flex justify-center items-center mt-12 md:mt-24'>
                 <Link
                     href='/contact'
                     className='block md:hidden mt-20'

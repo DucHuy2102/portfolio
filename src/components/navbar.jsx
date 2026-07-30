@@ -13,6 +13,7 @@ const MENU_LIST = [
     { url: '/about', title: 'About' },
     { url: '/portfolio', title: 'Portfolio' },
     { url: '/contact', title: 'Contact' },
+    { url: '/services', title: 'Services' },
 ];
 
 const topVariant = {
@@ -93,15 +94,40 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-24 xl:px-48 font-gelasio'>
+        <nav className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 font-gelasio'>
             {/* shell */}
             <div
-                className={`w-full max-w-[1400px] mx-auto flex items-center justify-between rounded-2xl 
+                className={`w-full max-w-[90rem] mx-auto flex items-center justify-between rounded-2xl 
             border border-zinc-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xl 
-            px-4 sm:px-6 py-3 ${
-                pathName !== '/' ? 'shadow-[0_10px_40px_-20px_rgba(0,0,0,0.35)]' : ''
-            }`}
+            px-4 sm:px-6 py-3 ${pathName !== '/' ? 'shadow-[0_10px_40px_-20px_rgba(0,0,0,0.35)]' : ''
+                    }`}
             >
+                {/* logo */}
+                <div className='hidden md:flex lg:flex items-center justify-start w-1/3'>
+                    <Link
+                        href='/'
+                        className='text-lg md:text-xl font-mono font-semibold tracking-tight transition-all duration-300 hover:opacity-80'
+                    >
+                        <span className='text-gray-400 dark:text-gray-500'>&lt; </span>
+                        <span className='text-gray-900 dark:text-gray-100'>Nguyen Duc </span>
+                        <span className='text-cyan-500'>Huy</span>
+                        <span className='text-gray-400 dark:text-gray-500'> /&gt;</span>
+                        <span className='text-cyan-500 font-bold animate-pulse ml-1'>_</span>
+                    </Link>
+                </div>
+                {/* Mobile Logo */}
+                <div className='md:hidden flex items-center justify-start'>
+                    <Link
+                        href='/'
+                        className='text-base font-mono font-semibold tracking-tight'
+                    >
+                        <span className='text-gray-400 dark:text-gray-500'>&lt; </span>
+                        <span className='text-gray-900 dark:text-gray-100'>Huy</span>
+                        <span className='text-gray-400 dark:text-gray-500'> /&gt;</span>
+                        <span className='text-cyan-500 font-bold animate-pulse ml-1'>_</span>
+                    </Link>
+                </div>
+
                 {/* menu list */}
                 <div className='hidden md:flex items-center justify-center gap-6 text-lg font-medium w-1/3'>
                     {MENU_LIST.map(({ url, title }, idx) => (
@@ -109,21 +135,8 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* logo */}
-                <div className='md:hidden lg:flex justify-center w-1/3'>
-                    <Link
-                        href='/'
-                        className='w-24 text-md bg-black rounded-md p-1 font-semibold flex items-center justify-center gap-1 border border-white'
-                    >
-                        <span className='text-white ml-1'>Duc</span>
-                        <span className='text-black bg-white w-12 h-8 rounded-sm flex items-center justify-center'>
-                            Huy
-                        </span>
-                    </Link>
-                </div>
-
                 {/* social */}
-                <div className='w-1/3 hidden md:flex items-center justify-center gap-4 text-zinc-600'>
+                <div className='w-1/3 hidden md:flex items-center justify-end gap-4 text-zinc-600'>
                     {SOCIAL_LIST.map(({ url, icon }, idx) => (
                         <a
                             href={url}

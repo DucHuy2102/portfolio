@@ -12,15 +12,17 @@ export default function AnimationProvider({ children }) {
     }, [pathName]);
 
     return (
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode='popLayout'>
             <div key={pathName} className='w-full h-full'>
                 <motion.div
+                    key={"motionDiv-01"}
                     className='h-full w-full fixed bg-black rounded-b-[100px] z-[100]'
                     animate={{ height: '0vh' }}
                     exit={{ height: '150vh' }}
                     transition={{ duration: 0.5, ease: 'easeOut' }}
                 />
                 <motion.div
+                    key={"motionDiv-02"}
                     className='fixed top-0 left-0 right-0 bottom-0 w-fit h-fit m-auto
                     text-white text-7xl font-bold z-[101] font-gelasio'
                     initial={{ opacity: 1 }}
@@ -31,6 +33,7 @@ export default function AnimationProvider({ children }) {
                     {namePage}
                 </motion.div>
                 <motion.div
+                    key={"motionDiv-03"}
                     className='h-screen w-screen fixed bottom-0 bg-black rounded-t-[100px] z-[90]'
                     initial={{ height: '150vh' }}
                     animate={{ height: '0vh', transition: { delay: 0.5 } }}

@@ -20,7 +20,7 @@ export default function ToggleThemeButton() {
             variant='ghost'
             size='icon'
         >
-            <AnimatePresence mode='wait' initial={false}>
+            <AnimatePresence mode='popLayout' initial={false}>
                 <motion.span
                     key='sun-icon'
                     variants={iconVariants}
